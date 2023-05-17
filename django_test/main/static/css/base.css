@@ -1,0 +1,67 @@
+body {
+    background: rgb(70, 67, 67);
+    margin: 0;
+    padding: 0;
+}
+
+
+aside {
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 15%;
+    height: 100vh;
+    padding: 3%;
+    color: white;
+    border-right: 5px, solid, black;
+}
+
+aside .nav {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 0;
+
+}
+
+aside img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+aside ul {list-style: none;}
+
+aside ul li {
+    color:rgb(73, 57, 57);
+    display: block;
+    margin: 10px;
+    font-size: 20px;
+}
+
+aside ul li:hover, a:hover {
+    color: rgb(109, 19, 19);
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main {
+    float: left;
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+    width: 70%;
+}
+
+.article h3 {
+    color:rgb(245, 9, 9)
+}
+
+.create_form form textarea {resize: none;}
+
+.form-control {
+    width: 50%;
+    margin: 10px;
+}
+
+.all_articles .article a {
+    text-decoration: none;
+    color: white;
+}

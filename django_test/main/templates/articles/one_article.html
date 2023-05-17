@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title%} {{ article.title }} {% endblock %}
+{% block content %}
+    
+    <div class="one_article">
+        <h3>{{ article.title }}</h3>
+        <p id="article_text">{{ article.text }}</p>
+        <p id="article_create">{{ article.created }}</p>
+                
+    </div>
+{% endblock %}

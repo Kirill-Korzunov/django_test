@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="all_articles">
+        {% if not articles %}
+            <h2> Здесь будут статьи, когда нибудь</h2>
+        {% else %}
+            {% for article in articles %}
+                <div class="article">
+                    <h3>{{ article.title }}</h3>
+                    <p id="article_text">{{ article.text }}</p>
+                    <a href="{% url 'detail_article' article.id %}">Читать детальнее</a>
+                    <hr>
+                </div>     
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

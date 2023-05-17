@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Форма для добавления статьи {% endblock %}
+{% block content %}
+    
+    <div class="create_form">
+        <h2> Форма для добавления статьи </h2>
+        {% if form.subject.errors %}
+            <div>    
+                <ul>
+                    {% for error in form.subject.errors %}
+                        <li><strong>{{ error|escape }}</strong></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.title }}<br>
+            {{ form.text }}<br>
+            
+            
+            <button type="submit">Добавить статью</button>
+        </form>
+    </div>
+{% endblock %}

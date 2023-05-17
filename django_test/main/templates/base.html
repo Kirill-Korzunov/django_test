@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Django test {% endblock %}</title>
+    <link rel="stylesheet", href="{% static 'css/base.css' %}"
+</head>
+<body>
+    <aside class="menu">
+        {% block menu %}
+            <img src="{% static 'image/image_menu.jpg'%}" alt="BLOG">
+            <p class="nav">Навигация</p>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'articles' %}">Статьи</a></li>
+                <li><a href="{% url 'about' %}">О сайте</a></li>
+                <li><a href="{% url 'create' %}">Добавить запись</a></li>
+            </ul>
+        {% endblock %}
+    </aside>
+    <main class="content">
+        {% block content %}
+            <h2>Базовый шаблон</h2>
+        {% endblock %}
+    </main>
+</body>
+</html>
