@@ -46,7 +46,6 @@ class ArticleUpdateView(View):
     def post(self, request, *args, **kwargs):
         id_article = kwargs.get('id')
         article = Article.objects.get(id=id_article)
-        print(article.created)
         form = ArticlesForm(request.POST, instance=article)
         print(form)
         if form.is_valid():
@@ -60,3 +59,16 @@ class ArticleUpdateView(View):
             article_mod.save()
             return redirect('articles')
         return render(request, 'articles/update.html', {'form': form})
+    
+
+class ArticleDeleteView(View): 
+    def get(self, request, *args, **kwargs):
+        return render(request, 'articles/delete.html')
+
+
+    def post(self, request, *args, **kwargs):
+        id_article = kwargs.get('id')
+        article = Article.objects.get(id=id_article)
+        if article:
+            article.delete()
+            return redirect('articles')
