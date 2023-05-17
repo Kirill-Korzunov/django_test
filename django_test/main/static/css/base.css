@@ -72,3 +72,15 @@ main {
 .one_article .modified a {
     text-decoration: none;
 }
+
+.one_article .delete {
+    color: rgb(223, 16, 16);
+}
+.one_article .delete a {
+    text-decoration: none;
+}
+
+.delete_form button {
+    background-color: darkred;
+    color: #0c0c0c;;
+}
