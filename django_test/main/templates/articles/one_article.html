@@ -11,6 +11,6 @@
             <p id="article_create">Редактирована - {{ article.modified }}</p>
         {% endif %}
         <a href="{% url 'update' article.id %}" class="modified">Редактировать</a>
-        <a href="{% url 'update' article.id %}" class="delete">Удалить</a>          
+        <a href="{% url 'delete' article.id %}" class="delete">Удалить</a>          
     </div>
 {% endblock %}
