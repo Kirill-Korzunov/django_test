@@ -7,6 +7,8 @@
         <h3>{{ article.title }}</h3>
         <p id="article_text">{{ article.text }}</p>
         <p id="article_create">{{ article.created }}</p>
-                
+        <p id="article_create">{{ article.modified }}</p>
+        <a href="{% url 'update' article.id %}" class="modified">Редактировать</a>
+        <a href="{% url 'update' article.id %}" class="delete">Удалить</a>          
     </div>
 {% endblock %}
