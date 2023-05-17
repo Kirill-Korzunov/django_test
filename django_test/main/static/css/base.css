@@ -65,3 +65,10 @@ main {
     text-decoration: none;
     color: white;
 }
+
+.one_article .modified {
+    color: green;
+}
+.one_article .modified a {
+    text-decoration: none;
+}
