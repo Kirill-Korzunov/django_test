@@ -25,13 +25,7 @@ class ArticleCreateView(View):
     def post(self, request, *args, **kwargs):
         form = ArticlesForm(request.POST)
         if form.is_valid():
-            article = Article(
-                title=form['title'].value(),
-                text=form['text'].value(),
-                created=datetime.now(),
-                modified=datetime.now(),
-                )
-            article.save()
+            form.save()
             return redirect('articles')
         return render(request, 'articles/create.html', {'form': form})
     
@@ -47,15 +41,9 @@ class ArticleUpdateView(View):
         id_article = kwargs.get('id')
         article = Article.objects.get(id=id_article)
         form = ArticlesForm(request.POST, instance=article)
-        print(form)
         if form.is_valid():
-            article_mod = Article(
-                id = id_article,
-                title=form['title'].value(),
-                text=form['text'].value(),
-                created=article.created,
-                modified=datetime.now(),
-                )
+            article_mod = form.save(commit=False)
+            article_mod.modified = datetime.now()
             article_mod.save()
             return redirect('articles')
         return render(request, 'articles/update.html', {'form': form})
